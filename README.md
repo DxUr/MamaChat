@@ -1,6 +1,7 @@
 # UDP BASE CHAT BOX WRITTEN IN PURE C
-## Note this works just in LINUX/UNIX-LIKE SYSTEMS(FREEBSD...)
+- Note this works just in LINUX/UNIX-LIKE SYSTEMS(FREEBSD...)
 
+## Screenshot:
 ![ScreenShot](assets/screenshot.png)
 
 ## Time:
@@ -8,9 +9,10 @@
 - Finished      01/11/2023 06:30 PM (still writing this READMI)
 
 ## Features:
-1. No dependencies.
-2. Plug and Play.
-3. Enjot it.
+- No dependencies.
+- MuliClients (Up to 32 client!).
+- Plug and Play.
+- Enjot it.
 
 ## Note:
 - I decided to make a Game then I see that enven the server is over kill so i stop.

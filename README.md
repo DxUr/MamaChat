@@ -30,6 +30,9 @@
     ```
 - Note as I thout a lot about the implementation I add some comments that doas not make a sense
 
+## Known issues:
+-No known issues. However some times when new client connect you may get some random empty messeges.
+
 ## Install / Run:
 - run `./build.sh` and every thing will be fine.
 

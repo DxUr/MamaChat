@@ -1,0 +1,32 @@
+{
+    "files.associations": {
+        "compare": "cpp",
+        "cstdint": "cpp",
+        "net.h": "c",
+        "cstdlib": "cpp",
+        "client.h": "c",
+        "pthread.h": "c",
+        "buffer": "c",
+        "types.h": "c",
+        "charconv": "c",
+        "chrono": "c",
+        "optional": "c",
+        "format": "c",
+        "ratio": "c",
+        "system_error": "c",
+        "array": "c",
+        "functional": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "unistd.h": "c",
+        "server.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "ioctl.h": "c",
+        "thread": "c",
+        "bitset": "c",
+        "string_view": "c",
+        "sstream": "c"
+    }
+}

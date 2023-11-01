@@ -16,13 +16,13 @@
 - I use simple model
 
     ```
-                                                 ---------------
-                                                |               |
-                                                |               |
-                                Chat/Game ======|  Net_Handler  |====== Server/Client UDP communication
-                                                |               |
-                                                |               |
-                                                 ---------------
+                         ---------------
+                        |               |
+                        |               |
+        Chat/Game ======|  Net_Handler  |====== Server/Client UDP communication
+                        |               |
+                        |               |
+                         ---------------
     ```
 - Note as I thout a lot about the implementation I add some comments that doas not make a sense
 

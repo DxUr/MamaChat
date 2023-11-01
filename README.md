@@ -2,18 +2,18 @@
 ## Note this works just in LINUX/UNIX-LIKE SYSTEMS(FREEBSD...)
 
 ## Time:
-    - Started       31/10/2023 11:00 PM
-    - Finished      01/11/2023 06:30 PM (still writing this READMI)
+- Started       31/10/2023 11:00 PM
+- Finished      01/11/2023 06:30 PM (still writing this READMI)
 
 ## Features:
-    1. No dependencies.
-    2. Plug and Play.
-    3. Enjot it.
+1. No dependencies.
+2. Plug and Play.
+3. Enjot it.
 
 ## Note:
-    - I decided to make a Game then I see that enven the server is over kill so i stop.
-    - I did not use the heap, as I do not want to debug segmentaion faults
-    - I use simple model
+- I decided to make a Game then I see that enven the server is over kill so i stop.
+- I did not use the heap, as I do not want to debug segmentaion faults
+- I use simple model
 
     ```
                                                  ---------------
@@ -24,11 +24,11 @@
                                                 |               |
                                                  ---------------
     ```
-    - Note as I thout a lot about the implementation I add some comments that doas not make a sense
+- Note as I thout a lot about the implementation I add some comments that doas not make a sense
 
 ## Install / Run:
-    - run `./build.sh` and every thing will be fine.
+- run `./build.sh` and every thing will be fine.
 
 
 ## Licence:
-    - BIGMAMA/DxUr I dont know this is not a program this is just a test
+- BIGMAMA/DxUr I dont know this is not a program this is just a test

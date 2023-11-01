@@ -1,6 +1,8 @@
 # UDP BASE CHAT BOX WRITTEN IN PURE C
 ## Note this works just in LINUX/UNIX-LIKE SYSTEMS(FREEBSD...)
 
+![ScreenShot](assets/screenshot.png)
+
 ## Time:
 - Started       31/10/2023 11:00 PM
 - Finished      01/11/2023 06:30 PM (still writing this READMI)

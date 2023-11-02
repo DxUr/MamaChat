@@ -20,7 +20,7 @@ void server(unsigned int p_port) {
     }
 
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(SERVER_PORT);
+    server_addr.sin_port = htons(p_port);
     server_addr.sin_addr.s_addr = INADDR_ANY;
 
     if (bind(sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr)) == -1) {
@@ -28,8 +28,8 @@ void server(unsigned int p_port) {
         exit(1);
     }
     CLS
-    printf("Server is running. Waiting for incoming messages...\n");
-
+    printf(NAME);
+    fflush(stdout);
     while (1) {
         socklen_t client_len = sizeof(client_addr);
 
@@ -43,7 +43,7 @@ void server(unsigned int p_port) {
 
         buffer[recv_len] = '\0';
 
-        printf("&&&: %s\n", buffer);
+        printf("\033[1m\033[92mServer$~ \033[1m\033[95m%s\033[0m\n", buffer);
     }
 
     close(sockfd);

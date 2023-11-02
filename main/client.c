@@ -7,7 +7,6 @@
 
 
 
-
 void client(char* p_ip, unsigned int p_port) {
     int sockfd;
     struct sockaddr_in server_addr;
@@ -25,13 +24,14 @@ void client(char* p_ip, unsigned int p_port) {
         fprintf(stderr, "Invalid address\n");
         exit(1);
     }
+    CLS
+    printf(NAME);
 
     while (1) {
         
-        printf(">>>");
-        fgets(buffer, sizeof(buffer), stdin);
-
-
+        printf("\033[1m\033[93mClient$~ \033[1m\033[92m");
+        getchar();
+        scanf("%"STR(MAX_BUFFER_SIZE)"[^\n]",buffer);
         ssize_t sent_len = rudp_sendto(sockfd, buffer, strlen(buffer), 0,
                                   (struct sockaddr *)&server_addr, sizeof(server_addr));
 

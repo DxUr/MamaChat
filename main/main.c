@@ -45,7 +45,6 @@ int main(int argc, char const *argv[])
     printf("select mode: (%d)server, (%d)client, (otherwise)quit:", SERVER, CLIENT);
     scanf("%d", &mode);
     if (mode == SERVER) {
-        server(SERVER_PORT);
         /*
         Net_Handler.connect_sig(CONNECTED, connected);
         Net_Handler.connect_sig(DISCONNECTED, disconnected);
@@ -53,23 +52,22 @@ int main(int argc, char const *argv[])
         Net_Handler.connect_sig(CLIENT_DISCONNECTED, client_disconnected);
         Net_Handler.connect_sig(RECV_DATA, recv_data);
 
+        */
         port_t port;
         printf("Enter listening port:");
         scanf("%d", &port);
         INF("Starting server")
         server(port);
         // Net_Handler.create_server(port);
-        */
     } else if (mode == CLIENT)
     {
-        client(SERVER_IP, SERVER_PORT);
         /*
         Net_Handler.connect_sig(CONNECTED, connected);
         Net_Handler.connect_sig(DISCONNECTED, disconnected);
         Net_Handler.connect_sig(CLIENT_CONNECTED, client_connected);
         Net_Handler.connect_sig(CLIENT_DISCONNECTED, client_disconnected);
         Net_Handler.connect_sig(RECV_DATA, recv_data);
-
+        */
         int port;
         char addr[100];
         printf("Enter address and port (address:port): ");
@@ -78,7 +76,6 @@ int main(int argc, char const *argv[])
         INF("Starting client")
         client(addr, port);
         //Net_Handler.connect_to(addr, (port_t)port);
-                */
     } else {
         INF("Quiting...")
         return 0;

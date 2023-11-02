@@ -26,7 +26,7 @@ void connected() {
         msg->op = 0;
         msg->id = id;
         strncpy(&(msg->alias), alias, sizeof(alias));
-        printf("\033[1m\033[92m(\033[1m\033[93m%s\033[1m\033[92m)$\033[0m", alias);
+        printf("\033[1m\033[92m(\033[1m\033[93m%s\033[1m\033[92m)$ \033[0m", alias);
         fflush(stdout);
         getchar();
         scanf("%[^\n]", &(msg->data));
@@ -54,7 +54,7 @@ void recv_data(buffer_t p_buff) {
     MSG_HEADER* msg = p_buff;
     if(strempty(&msg->data)) return;
     printf("\033[2K\r");
-    printf("\033[1m\033[92m(\033[1m\033[96m%s\033[1m\033[92m)$\033[1m\033[95m%s\033[0m\n\n", msg->alias, &msg->data);
-    printf("\033[1m\033[92m(\033[1m\033[93m%s\033[1m\033[92m)$\033[0m", alias);
+    printf("\033[1m\033[92m(\033[1m\033[96m%s\033[1m\033[92m)$ \033[1m\033[95m%s\033[0m\n\n", msg->alias, &msg->data);
+    printf("\033[1m\033[92m(\033[1m\033[93m%s\033[1m\033[92m)$ \033[0m", alias);
     fflush(stdout);
 }

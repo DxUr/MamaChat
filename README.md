@@ -1,12 +1,13 @@
-# UDP BASED CHAT BOX WRITTEN IN PURE C
+# RUDP BASED CHAT BOX WRITTEN IN PURE C
 - Note this works just in LINUX/UNIX-LIKE SYSTEMS(FREEBSD...)
 
 ## Screenshot:
+- OLD ONE I DONT HAVE TIME FOR THE NEW RUDP BASE
 ![ScreenShot](assets/screenshot.png)
 
 ## Time:
-- Started       31/10/2023 11:00 PM
-- Finished      01/11/2023 06:30 PM (still writing this READMI)
+- Started       01/11/2023 11:00 PM // As I do the Actual imple and the work of yesterday gone
+- Finished      02/11/2023 23:11 PM (still writing this READMI)
 
 ## Features:
 - No dependencies.
@@ -20,18 +21,18 @@
 - I use simple model
 
     ```
-                         ---------------
-                        |               |
-                        |               |
-        Chat/Game ======|  Net_Handler  |====== Server/Client UDP communication
-                        |               |
-                        |               |
-                         ---------------
+                         ----------------
+                        |                |
+                        |                |
+             Chat ======|      RUDP      |====== Server/Client UDP communication
+                        |                |
+                        |                |
+                         ----------------
     ```
 - Note as I thout a lot about the implementation I add some comments that doas not make a sense
 
 ## Known issues:
--No known issues. However some times when new client connect you may get some random empty messeges.
+-No known issues.
 
 ## Install / Run:
 - run `./build.sh` and every thing will be fine.

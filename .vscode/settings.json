@@ -27,6 +27,19 @@
         "thread": "c",
         "bitset": "c",
         "string_view": "c",
-        "sstream": "c"
+        "sstream": "c",
+        "inet.h": "c",
+        "algorithm": "c",
+        "random": "c",
+        "limits": "c",
+        "semaphore": "c",
+        "valarray": "c",
+        "select.h": "c",
+        "socket.h": "c",
+        "in.h": "c",
+        "memory.h": "c",
+        "rudp.h": "c",
+        "stdio.h": "c",
+        "chat.h": "c"
     }
 }

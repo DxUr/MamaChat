@@ -1,6 +1,5 @@
 #include "client.h"
-#include <sys/socket.h>
-#include <arpa/inet.h>
+#include "rudp.h"
 
 static uint32_t session_uid = 0;
 static int sockfd;
@@ -14,7 +13,7 @@ err client_dispatch_data(buffer_t p_buff) {
     msg->s_uid = session_uid;
     msg->id = id;
     strncpy(msg->alias, alias, sizeof(msg->alias) - 1);
-    if (sendto(sockfd, p_buff, MAX_BUFFER_SIZE, 0, (struct sockaddr *)&server_addr, sizeof(server_addr)) == -1) {
+    if (rudp_sendto(sockfd, p_buff, MAX_BUFFER_SIZE, 0, (struct sockaddr *)&server_addr, sizeof(server_addr)) == -1) {
         return ERR_CANNOT_SEND_DATA;
         // TODO: server disconected handle ERROR
     }
@@ -55,7 +54,7 @@ err client_get_data(buffer_t p_buff) {
     // Receive data from server
     // Must clear the buffer
     memset(p_buff, 0x0, sizeof(MAX_BUFFER_SIZE));
-        ssize_t num_bytes = recvfrom(sockfd, p_buff, MAX_BUFFER_SIZE - 1, 0, NULL, NULL);
+        ssize_t num_bytes = rudp_recvfrom(sockfd, p_buff, MAX_BUFFER_SIZE - 1, 0, NULL, NULL);
     if (num_bytes == -1) {
         return ERR_CANNOT_RECV_DATA;
     }
@@ -72,7 +71,7 @@ err client_get_data(buffer_t p_buff) {
         if(!id || msg->id == id) return ERR_OK;
         printf("\033[2K\r");
         printf("\033[1m\033[92m(\033[1m\033[96m%s\033[1m\033[92m) Connected\033[0m\n\n", msg->alias);
-        printf("\033[1m\033[92m(\033[1m\033[93m%s\033[1m\033[92m)$\033[0m", alias);
+        printf("\033[1m\033[92m(\033[1m\033[93m%s\033[1m\033[92m)$ \033[0m", alias);
         fflush(stdout);
         return ERR_OK;
     } else if (msg->op == 2) {

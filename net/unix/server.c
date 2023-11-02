@@ -1,5 +1,5 @@
 #include "server.h"
-#include <arpa/inet.h>
+#include "rudp.h"
 
 
 
@@ -40,7 +40,7 @@ err start_server(port_t p_port) {
 static err _send_data(struct sockaddr_in* addr_in, buffer_t p_buff) {
     MSG_HEADER* msg = p_buff;
     msg->s_uid = session_uid;
-    if (sendto(sockfd, p_buff, MAX_BUFFER_SIZE, 0, (struct sockaddr *)addr_in, client_addr_len) == -1) {
+    if (rudp_sendto(sockfd, p_buff, MAX_BUFFER_SIZE, 0, (struct sockaddr *)addr_in, client_addr_len) == -1) {
         return ERR_CANNOT_SEND_DATA;
     }
     return ERR_OK;
@@ -63,7 +63,7 @@ err server_get_data(buffer_t p_buff) {
     // Must clear the buffer
     memset(p_buff, 0x0, sizeof(MAX_BUFFER_SIZE));
     struct sockaddr_in client_addr;
-    ssize_t num_bytes = recvfrom(sockfd, p_buff, MAX_BUFFER_SIZE - 1, 0,
+    ssize_t num_bytes = rudp_recvfrom(sockfd, p_buff, MAX_BUFFER_SIZE - 1, 0,
                                     (struct sockaddr *)&client_addr, &client_addr_len);
     if (num_bytes == -1) {
         return ERR_CANNOT_RECV_DATA;
@@ -97,7 +97,7 @@ err server_get_data(buffer_t p_buff) {
         if (reg_new) {
             printf("\033[2K\r");
             printf("\033[1m\033[92m(\033[1m\033[96m%s\033[1m\033[92m) Connected\033[0m\n\n", msg->alias);
-            printf("\033[1m\033[92m(\033[1m\033[93m%s\033[1m\033[92m)$\033[0m", alias);
+            printf("\033[1m\033[92m(\033[1m\033[93m%s\033[1m\033[92m)$ \033[0m", alias);
             fflush(stdout);
             clients_addr[clients_count] = client_addr;
             clients_count++;

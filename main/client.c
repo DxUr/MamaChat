@@ -35,9 +35,9 @@ void client(char* p_ip, unsigned int p_port) {
         ssize_t sent_len = rudp_sendto(sockfd, buffer, strlen(buffer), 0,
                                   (struct sockaddr *)&server_addr, sizeof(server_addr));
 
-        if (sent_len == -1) {
-            perror("sendto");
-            exit(1);
+        if (sent_len < 0) {
+            ERR("MSG not sent.")
+            continue;
         }
     }
 

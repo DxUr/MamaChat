@@ -36,9 +36,9 @@ void server(unsigned int p_port) {
         ssize_t recv_len = rudp_recvfrom(sockfd, buffer, sizeof(buffer), 0,
                                     (struct sockaddr *)&client_addr, &client_len);
 
-        if (recv_len == -1) {
-            perror("recvfrom");
-            exit(1);
+        if (recv_len < 0) {
+            ERR("MSG losed.")
+            continue;
         }
 
         buffer[recv_len] = '\0';
